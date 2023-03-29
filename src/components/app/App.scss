@@ -1,0 +1,37 @@
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  width: $chessCageSize * 8;
+  height: $chessCageSize * 8;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  width: $chessCageSize;
+  height: $chessCageSize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.black {
+  background-color: #9e4213;
+}
+
+.white {
+  background-color: #fbe1bc;
+}
