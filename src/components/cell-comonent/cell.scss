@@ -1,0 +1,9 @@
+@import "../app/variables";
+
+.cell {
+  width: $chessCageSize;
+  height: $chessCageSize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

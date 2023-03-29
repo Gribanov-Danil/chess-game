@@ -1,0 +1,8 @@
+@import "../app/variables";
+
+.board {
+  width: $chessCageSize * 8;
+  height: $chessCageSize * 8;
+  display: flex;
+  flex-wrap: wrap;
+}

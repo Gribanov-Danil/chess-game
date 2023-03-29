@@ -1,4 +1,6 @@
 @import "variables";
+@import "../cell-comonent/cell";
+@import "../board-component/board";
 
 * {
   margin: 0;
@@ -8,21 +10,6 @@
 .app {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.board {
-  width: $chessCageSize * 8;
-  height: $chessCageSize * 8;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.cell {
-  width: $chessCageSize;
-  height: $chessCageSize;
   display: flex;
   justify-content: center;
   align-items: center;
