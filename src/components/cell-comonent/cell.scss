@@ -6,4 +6,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  img {
+    width: $chessFigureSize;
+    height: $chessFigureSize;
+    position: relative;
+  }
 }

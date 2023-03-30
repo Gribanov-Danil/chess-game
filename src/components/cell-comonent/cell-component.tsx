@@ -7,5 +7,9 @@ interface ICell {
 }
 
 export const CellComponent: FC<ICell> = ({ cell }) => {
-  return <div className={`cell ${cell.color}`} key={uuid()}></div>
+  return (
+    <div className={`cell ${cell.color}`} key={uuid()}>
+      {cell.figure?.logo && <img src={cell.figure.logo} alt="фигура" />}
+    </div>
+  )
 }
