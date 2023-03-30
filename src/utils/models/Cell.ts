@@ -21,4 +21,12 @@ export class Cell {
     this.available = false
     this.id = uuid()
   }
+
+  public moveFigure(target: Cell) {
+    if (this.figure && this.figure.canMove(target)) {
+      this.figure.moveFigure(target)
+      target.figure = this.figure
+      this.figure = null
+    }
+  }
 }

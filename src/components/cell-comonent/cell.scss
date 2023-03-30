@@ -13,3 +13,22 @@
     position: relative;
   }
 }
+
+.black {
+  background-color: #9e4213;
+}
+
+.white {
+  background-color: #fbe1bc;
+}
+
+.selected {
+  background-color: #67a6b7;
+}
+
+.available {
+  height: $possibleMovePoint;
+  width: $possibleMovePoint;
+  border-radius: 50%;
+  background-color: #6f9d2c;
+}
