@@ -11,7 +11,9 @@ export class Rook extends Figure {
     this.name = FiguresNames.ROOK
   }
   canMove(target: Cell): boolean {
-    return false
+    if (!super.canMove(target)) return false
+    if (this.cell.isEmptyVertical(target)) return true
+    return this.cell.isEmptyHorizontal(target)
   }
   moveFigure(target: Cell) {}
 }

@@ -29,7 +29,9 @@ export abstract class Figure {
     this.id = uuid()
   }
 
-  abstract canMove(target: Cell): boolean
+  public canMove(target: Cell): boolean {
+    return !(target.figure?.color === this.color || target.figure?.name === FiguresNames.KING)
+  }
 
   abstract moveFigure(target: Cell): void
 }
