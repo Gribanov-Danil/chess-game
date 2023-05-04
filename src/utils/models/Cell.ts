@@ -69,6 +69,10 @@ export class Cell {
     return true
   }
 
+  public isEnemy(target: Cell) {
+    return target.figure ? this.figure?.color !== target.figure.color : false
+  }
+
   public setFigure(figure: Figure) {
     this.figure = figure
     this.figure.cell = this
