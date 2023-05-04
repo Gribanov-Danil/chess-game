@@ -3,20 +3,26 @@ import { Dispatch, FC, SetStateAction, useEffect, useState } from "react"
 import uuid from "react-uuid"
 import { CellComponent } from "../cell-comonent/cell-component"
 import { Cell } from "../../utils/models/Cell"
+import { Player } from "../../utils/models/Player"
 
 interface IBoard {
   board: Board
   setBoard: Dispatch<SetStateAction<Board>>
+  currentPlayer: Player | null
+  togglePlayer: () => void
 }
-export const BoardComponent: FC<IBoard> = ({ board, setBoard }) => {
+export const BoardComponent: FC<IBoard> = ({ board, setBoard, currentPlayer, togglePlayer }) => {
   const [selectedCell, setSelectedCell] = useState<Cell | null>(null)
 
   const onClick = (cell: Cell) => {
     if (selectedCell && selectedCell !== cell && selectedCell.figure?.canMove(cell)) {
       selectedCell.moveFigure(cell)
+      togglePlayer()
       setSelectedCell(null)
     } else {
-      setSelectedCell(cell)
+      if (cell.figure?.color === currentPlayer?.color) {
+        setSelectedCell(cell)
+      }
     }
   }
   useEffect(() => {
